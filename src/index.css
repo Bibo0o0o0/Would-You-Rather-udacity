@@ -1,13 +1,58 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+nav {
+  background-color: #ffffff  !important;
+  border-bottom: 2px solid #239e61;
+  box-shadow: none !important;
+}
+
+nav ul a {
+  color: #000 !important;
+}
+
+.card {
+  padding-bottom: 30px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.card .card-content {
+  color: #000;
+  background: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  width: 100%;
+}
+
+.card .card-image .card-title {
+  position: relative;
+  color: #000;
+}
+
+.card .card-image {
+  text-align: center;
+}
+
+.card .card-image img {
+  width: 50% !important;
+  display: inline-block !important;
+}
+
+button.waves-effect.waves-light.btn.center {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
 }
