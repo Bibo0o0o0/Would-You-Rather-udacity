@@ -56,13 +56,16 @@ button.waves-effect.waves-light.btn.center {
     text-align: center;
     display: block;
 }
+
 .select-dropdown li img {
     float: left;
 }
+
 .active {
     border: 2px solid #eee;
     min-height: 300px !important;
 }
+
 .container-all {
     border: 2px solid #dbdbdb;
     width: 100%;
@@ -72,11 +75,13 @@ button.waves-effect.waves-light.btn.center {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    margin-top: 20px ;
+    margin-top: 20px;
 }
-.marg-top{
-  margin-top: 30px;
+
+.marg-top {
+    margin-top: 30px;
 }
+
 .container-header {
     width: 100%;
     background: #eee;
@@ -89,31 +94,37 @@ button.waves-effect.waves-light.btn.center {
     -ms-border-radius: 8px 8px 0 0;
     -o-border-radius: 8px 8px 0 0;
 }
+
 .container-all p {
     margin: 0;
     font-weight: bold;
 }
+
 .SubContainer-data small {
     display: block;
 }
+
 .container-all .container-img img {
     width: 100%;
 }
+
 .container-all .container-img {
     border-right: 1px solid #eee;
 }
+
 .flex-container {
     display: flex;
     justify-content: flex-start;
 }
 
-.flex-container > div {
+.flex-container>div {
     width: 100px;
     margin: 10px;
     text-align: center;
     padding-right: 10px;
 }
-.flex-container > div:nth-child(2) {
+
+.flex-container>div:nth-child(2) {
     flex: 1;
     text-align: left;
     line-height: 30px;
@@ -123,13 +134,17 @@ button.waves-effect.waves-light.btn.center {
     color: #000;
     font-weight: bold;
 }
+
 .tabs .tab a.active,
-.tabs .tab a:hover{
-  color: #239e61;
+.tabs .tab a:hover {
+    color: #239e61;
 }
-.tabs .indicator{
-  background-color: #239e61;
+
+.tabs .indicator {
+    background-color: #239e61;
 }
-.tabs .tab a:focus, .tabs .tab a:focus.active{
-  background: transparent;
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background: transparent;
 }

@@ -1,6 +1,6 @@
 import User1 from './imgs/man.png'
 import User2 from './imgs/man (2).png'
-import User3 from './imgs/girl-a.png'
+import User3 from './imgs/girl (1).png'
 
 let users = {
   sarahedo: {
