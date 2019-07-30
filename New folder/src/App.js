@@ -5,9 +5,8 @@ import Home from './components/home/home'
 import SignIn from './components/signin/signin'
 import {connect} from 'react-redux'
 import {handleInitialData} from './redux/actions/shared'
-import {Redirect} from 'react-router-dom'
-import 'materialize-css/dist/css/materialize.min.css';
 import history from './history'
+import PrivateRoute from './components/privateRoute/privareRoute'
 class App extends Component {
     componentDidMount() {
         const {dispatch} = this.props
@@ -26,18 +25,7 @@ class App extends Component {
             <Router history={history}>
                 <div>
                     <Header/>
-                    <Route
-                        exact
-                        path="/"
-                        render={props => this.props.login
-                        ? (<Home {...props}/>)
-                        : (<Redirect
-                            to={{
-                            pathname: '/signin',
-                            state: {
-                                from: props.location
-                            }
-                        }}/>)}/>
+                    <PrivateRoute path="/" component={Home} login={this.props.login}/>
 
                     <Route
                         exact

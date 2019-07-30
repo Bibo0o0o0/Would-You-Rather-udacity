@@ -12,7 +12,7 @@ class SignIn extends Component {
     }
     login = () => {
         if (this.selectElement.value === "0") {
-            alert('plz sellect')
+            alert('Please select a user')
         } else {
             this
                 .props

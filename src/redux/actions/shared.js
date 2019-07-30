@@ -1,21 +1,24 @@
-import {_getUsers} from '../../_DATA'
+import {_getUsers, _getQuestions} from '../../_DATA'
 export const RECEIVE_DATA = 'RECEIVE_DATA'
 export const LOGIN = 'LOGIN'
 export const SELECT_USER = 'SELECT_USER'
+export const LOGOUT = 'LOGOUT'
 
-function receiveData (users) {
+function receiveData (users, questions) {
     return {
         type: RECEIVE_DATA,
         users,
+        questions,
     }
 }
 
 export function handleInitialData(){
     return dispatch => {
         return Promise.all([
-                _getUsers()
-            ]).then(([users]) => {
-                dispatch(receiveData(users))
+                _getUsers(),
+                _getQuestions()
+            ]).then(([users, questions]) => {
+                dispatch(receiveData(users, questions))
             })
     }
 }
@@ -33,15 +36,28 @@ export function handleLogin () {
     }
 }
 
+function logout () {
+    return {
+        type: LOGOUT
+    }
+}
+
+export function handleLogout () {
+    return dispatch => {
+        return dispatch(logout())
+    }
+}
+
 function selectUser (selectedUser) {
     return{
         type: SELECT_USER,
-        user: selectedUser
+        user: selectedUser,
     }
 }
 
 export function handleSelectedUser(selectedUser){
-    return dispatch => {
-        return dispatch(selectUser(selectedUser))
+    return (dispatch, getState) => {
+        let state = getState()
+        return dispatch(selectUser(state.users[selectedUser]))
     }
 }

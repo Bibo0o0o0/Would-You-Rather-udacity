@@ -6,7 +6,8 @@ import SignIn from './components/signin/signin'
 import {connect} from 'react-redux'
 import {handleInitialData} from './redux/actions/shared'
 import history from './history'
-import PrivateRoute from './components/privateRoute/privareRoute'
+import PrivateRoute from './components/privateRoute/privateRoute'
+import NewQuestion from './components/newQuestion/newQuestion'
 class App extends Component {
     componentDidMount() {
         const {dispatch} = this.props
@@ -26,6 +27,7 @@ class App extends Component {
                 <div>
                     <Header/>
                     <PrivateRoute path="/" component={Home} login={this.props.login}/>
+                    <PrivateRoute path="/new-question" component={NewQuestion} login={this.props.login}/>
 
                     <Route
                         exact

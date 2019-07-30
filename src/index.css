@@ -13,10 +13,35 @@ nav {
     background-color: #ffffff;
     border-bottom: 2px solid #239e61;
     box-shadow: none;
+    line-height: unset;
+    min-height: 50px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+nav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+}
+nav ul li {
+    color: #000;
+    height: 100%;
+    float: none;
+    padding: 0 10px;
 }
 
 nav ul a {
     color: #000 !important;
+}
+.profile-pic {
+    background-size: contain;
+    width: 40px;
+    height: 40px;
 }
 
 .card {
@@ -72,10 +97,11 @@ button.waves-effect.waves-light.btn.center {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    margin-top: 20px ;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.marg-top{
-  margin-top: 30px;
+.marg-top {
+    margin-top: 30px;
 }
 .container-header {
     width: 100%;
@@ -124,12 +150,28 @@ button.waves-effect.waves-light.btn.center {
     font-weight: bold;
 }
 .tabs .tab a.active,
-.tabs .tab a:hover{
-  color: #239e61;
+.tabs .tab a:hover {
+    color: #239e61;
 }
-.tabs .indicator{
-  background-color: #239e61;
+.tabs .indicator {
+    background-color: #239e61;
 }
-.tabs .tab a:focus, .tabs .tab a:focus.active{
-  background: transparent;
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background: transparent;
+}
+nav ul a {
+    padding: 13px;
+}
+nav ul a:hover {
+    font-weight: bold;
+    color: #ffffff !important;
+    background-color: #239e61;
+}
+.space-left-right .SubContainer-data{
+    padding: 10px;
+}
+.space-left-right .SubContainer-data *{
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
 }
