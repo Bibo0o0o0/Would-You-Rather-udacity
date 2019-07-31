@@ -9,13 +9,17 @@ function addQuestion(questions){
 }
 
 export function addQuestionHandle (data) {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         return  Promise.all([
-            _saveQuestion(data),
-            // _getQuestions()
+            _saveQuestion(data)
         ]).then(([question]) => {
-            let questions = getState().questions
-            dispatch(addQuestion(questions))
+            console.log(question)
+            Promise.all([
+                _getQuestions()
+            ]).then(([questions]) => {
+                console.log(questions)
+                dispatch(addQuestion(questions))
+            })
         })
     }
 }
