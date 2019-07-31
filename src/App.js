@@ -8,6 +8,7 @@ import {handleInitialData} from './redux/actions/shared'
 import history from './history'
 import PrivateRoute from './components/privateRoute/privateRoute'
 import NewQuestion from './components/newQuestion/newQuestion'
+import LeaderBoard from './components/leaderBoard/leaderBoard'
 class App extends Component {
     componentDidMount() {
         const {dispatch} = this.props
@@ -28,6 +29,7 @@ class App extends Component {
                     <Header/>
                     <PrivateRoute path="/" component={Home} login={this.props.login}/>
                     <PrivateRoute path="/new-question" component={NewQuestion} login={this.props.login}/>
+                    <PrivateRoute path="/leader-board" component={LeaderBoard} login={this.props.login} />
 
                     <Route
                         exact
