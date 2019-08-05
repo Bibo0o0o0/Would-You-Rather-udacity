@@ -3,6 +3,7 @@ export const RECEIVE_DATA = 'RECEIVE_DATA'
 export const LOGIN = 'LOGIN'
 export const SELECT_USER = 'SELECT_USER'
 export const LOGOUT = 'LOGOUT'
+export const LOAD_DATA = 'LOAD_DATA'
 
 function receiveData (users, questions) {
     return {
@@ -59,5 +60,18 @@ export function handleSelectedUser(selectedUser){
     return (dispatch, getState) => {
         let state = getState()
         return dispatch(selectUser(state.users[selectedUser]))
+    }
+}
+
+function loader (status) {
+    return {
+        type: LOAD_DATA,
+        loading: status
+    }
+}
+
+export function handleLoader (status) {
+    return dispatch => {
+        return dispatch(loader(status))
     }
 }

@@ -13,7 +13,7 @@ const PrivateRoute = (props) => {
                 to={{
                 pathname: '/signin',
                 state: {
-                    from: routeProps.location
+                    from: routeProps.location,
                 }
             }}/>)}/>
     )

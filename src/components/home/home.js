@@ -60,6 +60,7 @@ class Home extends Component {
                                     .keys(UnanwseredQuestions)
                                     .map(key => <QuestionCard
                                         key={key}
+                                        answered={false}
                                         question={UnanwseredQuestions[key]}
                                         autherAvatar={this.props.users[UnanwseredQuestions[key].author].avatarURL}/>)}
                             </div>
@@ -71,6 +72,7 @@ class Home extends Component {
                             <div className="container-all">
                                 {answeredQuestions.map(answeredQuestion => <QuestionCard
                                     key={answeredQuestion.id}
+                                    answered={true}
                                     autherAvatar={this.props.users[answeredQuestion.author].avatarURL}
                                     question={answeredQuestion}/>)}
                             </div>
