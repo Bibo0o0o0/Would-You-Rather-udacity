@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import history from '../../history'
 import {addQuestionHandle} from '../../redux/actions/questions'
 
 class NewQuestion extends Component {
@@ -13,6 +14,7 @@ class NewQuestion extends Component {
             this
                 .props
                 .dispatch(addQuestionHandle({author: userID, optionOneText: optionOne, optionTwoText: optionTwo}))
+                history.push('/')
         }
     }
     render() {

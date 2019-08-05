@@ -24,6 +24,11 @@ class SignIn extends Component {
 
         }
     }
+    componentDidUpdate(prevProps){
+        if(prevProps.users !== this.props.users){
+            M.AutoInit();
+        }
+    }
     render() {
         return (
             <div className="container">

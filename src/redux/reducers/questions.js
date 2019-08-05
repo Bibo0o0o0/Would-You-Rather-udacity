@@ -1,5 +1,5 @@
 import {RECEIVE_DATA} from '../actions/shared'
-import {ADD_QUESTION} from '../actions/questions'
+import {ADD_QUESTION, SAVE_QUESTION_ANSWERE} from '../actions/questions'
 
 
 export default function questions(state = {}, action) {
@@ -7,6 +7,8 @@ export default function questions(state = {}, action) {
         case RECEIVE_DATA:
             return action.questions
         case ADD_QUESTION:
+            return action.questions
+        case SAVE_QUESTION_ANSWERE:
             return action.questions
         default:
             return state

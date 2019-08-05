@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const AnsweredQuestion = (props) => {
+const QuestionCard = (props) => {
     return (
         <div>
             <div className="container-header">
@@ -13,10 +14,12 @@ const AnsweredQuestion = (props) => {
                 <div className="SubContainer-data">
                     <p>Would you rather</p>
                     <small>{props.question.optionOne.text}</small>
-                    <button className="btn waves-effect waves-light">view Poll</button>
+                    <Link to={`questions/${props.question.id}`}>
+                        <button className="btn waves-effect waves-light">view Poll</button>
+                    </Link>
                 </div>
             </div>
         </div>
     )
 }
-export default AnsweredQuestion
+export default QuestionCard

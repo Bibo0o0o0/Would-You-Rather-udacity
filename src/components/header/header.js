@@ -35,7 +35,7 @@ class Header extends Component {
                                 <NavLink activeClassName="link-active" to="/new-question">New Question</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName="link-active" to="/">Leader Board</NavLink>
+                                <NavLink activeClassName="link-active" to="/leader-board">Leader Board</NavLink>
                             </li>
                         </ul>
                         {navLogged}
