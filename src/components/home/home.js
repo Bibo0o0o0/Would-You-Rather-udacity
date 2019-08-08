@@ -73,12 +73,22 @@ class Home extends Component {
                         <div id="test1" className="col s12">
 
                             <div className="container-all">
+<<<<<<< HEAD
                                 {UnanwseredQuestionsArray
                                     .map(UnanwseredQuestion => <QuestionCard
                                         key={UnanwseredQuestion.id}
                                         answered={false}
                                         question={UnanwseredQuestion}
                                         autherAvatar={this.props.users[UnanwseredQuestion.author].avatarURL}/>)}
+=======
+                                {Object
+                                    .keys(UnanwseredQuestions)
+                                    .map(key => <QuestionCard
+                                        key={key}
+                                        answered={false}
+                                        question={UnanwseredQuestions[key]}
+                                        autherAvatar={this.props.users[UnanwseredQuestions[key].author].avatarURL}/>)}
+>>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
                             </div>
 
                         </div>

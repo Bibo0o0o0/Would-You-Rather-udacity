@@ -330,6 +330,7 @@ nav ul a:hover {
     }
 }
 
+<<<<<<< HEAD
 /* Loader */
 .SubContainer-data .first-div,
 .SubContainer-data .second-div{
@@ -389,3 +390,6 @@ margin-top: 10px;
     font-weight: bold;
     padding: 7px;
 }
+=======
+/* Loader */
+>>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b

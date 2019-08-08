@@ -9,8 +9,11 @@ import NewQuestion from './components/newQuestion/newQuestion'
 import LeaderBoard from './components/leaderBoard/leaderBoard'
 import Loader from './components/loader/loader'
 import Question from './components/question/question'
+<<<<<<< HEAD
 import NoMatch from './components/NoMatch/NoMatch'
 import history from './history'
+=======
+>>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
 
 class App extends Component {
     componentDidMount() {
@@ -23,6 +26,7 @@ class App extends Component {
             <Router history={history}>
                 <div>
                     <Header/>
+<<<<<<< HEAD
                     <Switch>
                         <Route
                             exact
@@ -88,6 +92,28 @@ class App extends Component {
                             }}/>)}/>
                     </Switch>
                     {this.props.loading
+=======
+                    <PrivateRoute path="/" component={Home} login={this.props.login}/>
+                    <PrivateRoute
+                        path="/new-question"
+                        component={NewQuestion}
+                        login={this.props.login}/>
+                    <PrivateRoute
+                        path="/leader-board"
+                        component={LeaderBoard}
+                        login={this.props.login}/>
+
+                    <PrivateRoute
+                        path="/questions/:questionID"
+                        component={Question}
+                        login={this.props.login}/>
+
+                    <Route
+                        exact
+                        path="/signin"
+                        render={(routeProps) => <SignIn {...routeProps} users={this.props.users}/>}/> 
+                        {this.props.loading
+>>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
                         ? <Loader/>
                         : null}
                 </div>
@@ -96,4 +122,8 @@ class App extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default connect(state => ({loading: state.loading, login: state.login, users: state.users}))(App)
+=======
+export default connect(state => ({loading: state.loading, login: state.login, users: state.users}))(App);
+>>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
