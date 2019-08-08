@@ -12,7 +12,6 @@ function PrivateRoute ({component: Component, ...rest}){
             ) : (
               <Redirect
                 to={{
-<<<<<<< HEAD
                   pathname: "/signin",
                   state: { from: rest.path }
                 }}
@@ -21,14 +20,6 @@ function PrivateRoute ({component: Component, ...rest}){
           }
         />
       )
-=======
-                pathname: '/signin',
-                state: {
-                    from: routeProps.location,
-                }
-            }}/>)}/>
-    )
->>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
 }
 
 export default PrivateRoute

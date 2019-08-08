@@ -35,11 +35,7 @@ class Header extends Component {
                                 <NavLink activeClassName="link-active" to="/add">New Question</NavLink>
                             </li>
                             <li>
-<<<<<<< HEAD
                                 <NavLink activeClassName="link-active" to="/leaderboard">Leader Board</NavLink>
-=======
-                                <NavLink activeClassName="link-active" to="/leader-board">Leader Board</NavLink>
->>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
                             </li>
                         </ul>
                         {navLogged}

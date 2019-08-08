@@ -10,26 +10,15 @@ const Question = (props) => {
 
     const saveAnswer = () => {
         let choise = null
-<<<<<<< HEAD
         if (choiseOne.checked) {
             choise = 'optionOne'
         } else if (choiseTwo.checked) {
             choise = 'optionTwo'
         } else {
-=======
-        if(choiseOne.checked){
-            choise = 'optionOne'
-        }
-        else if (choiseTwo.checked) {
-            choise = 'optionTwo'
-        }
-        else {
->>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
             alert('Please, Select an choise')
             return
         }
 
-<<<<<<< HEAD
         props.dispatch(handleSaveQuestionAnswer({authedUser: props.user.id, qid: question, answer: choise}))
     }
 
@@ -103,14 +92,6 @@ const Question = (props) => {
                     </div>
                 </div>
             </div>
-=======
-        props.dispatch(handleSaveQuestionAnswer({authedUser: props.user, qid: question, answer: choise}))
-    }
-
-    if (props.user.answers.hasOwnProperty(question)) {
-        return (
-            <p>answered</p>
->>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
         )
     }
     return (
@@ -120,12 +101,8 @@ const Question = (props) => {
                 <div className="col s6">
                     <div className="container-all marg-top space-left-right">
                         <div className="container-header">
-<<<<<<< HEAD
                             <p>{authorObject.name}
                                 asks:</p>
-=======
-                            <p>{authorObject.name}asks:</p>
->>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
                         </div>
                         <div className="container-data flex-container">
                             <div className="container-img">
@@ -135,7 +112,6 @@ const Question = (props) => {
                                 <p>Would You Rather ...</p>
                                 <div>
                                     <label>
-<<<<<<< HEAD
                                         <input
                                             ref={input => choiseOne = input}
                                             type="radio"
@@ -149,13 +125,6 @@ const Question = (props) => {
                                             type="radio"
                                             name="options"
                                             value="optionTwo"/>
-=======
-                                        <input ref={input => choiseOne = input} type="radio" name="options" value="optionOne"/>
-                                        <span>{props.questions[question].optionOne.text}</span>
-                                    </label>
-                                    <label>
-                                        <input ref={input => choiseTwo = input} type="radio" name="options" value="optionTwo"/>
->>>>>>> 4143def7ec6b4f37346a6266c75074acf1316e9b
                                         <span>{props.questions[question].optionTwo.text}</span>
                                     </label>
                                 </div>
