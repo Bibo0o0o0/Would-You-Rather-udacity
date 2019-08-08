@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 import QuestionCard from '../questionCard/questionCard'
 import M from 'materialize-css'
 
@@ -17,17 +18,33 @@ class Home extends Component {
         const answeredQuestionskeys = Object.keys({
             ...this.props.user.answers
         })
+
         const answeredQuestions = answeredQuestionskeys.map(key => {
             return {
                 ...this.props.questions[key]
             }
         })
-        const UnanwseredQuestions = {
+
+        answeredQuestions.sort((a,b) => {
+            return a.timestamp - b.timestamp
+        })
+
+        const UnanwseredQuestionsObj = {
             ...this.props.questions
         }
+
         answeredQuestionskeys.forEach(key => {
-            delete UnanwseredQuestions[key]
+            delete UnanwseredQuestionsObj[key]
         })
+
+        const UnanwseredQuestionsArray = []
+        for (let UnanwseredQuestion in UnanwseredQuestionsObj){
+            UnanwseredQuestionsArray.push(UnanwseredQuestionsObj[UnanwseredQuestion])
+        }
+        UnanwseredQuestionsArray.sort((a,b) => {
+            return a.timestamp - b.timestamp
+        })
+        
         return (
             <div className="container">
                 <div className="row">
@@ -56,13 +73,12 @@ class Home extends Component {
                         <div id="test1" className="col s12">
 
                             <div className="container-all">
-                                {Object
-                                    .keys(UnanwseredQuestions)
-                                    .map(key => <QuestionCard
-                                        key={key}
+                                {UnanwseredQuestionsArray
+                                    .map(UnanwseredQuestion => <QuestionCard
+                                        key={UnanwseredQuestion.id}
                                         answered={false}
-                                        question={UnanwseredQuestions[key]}
-                                        autherAvatar={this.props.users[UnanwseredQuestions[key].author].avatarURL}/>)}
+                                        question={UnanwseredQuestion}
+                                        autherAvatar={this.props.users[UnanwseredQuestion.author].avatarURL}/>)}
                             </div>
 
                         </div>
@@ -88,4 +104,4 @@ class Home extends Component {
     }
 }
 
-export default connect(state => ({users: state.users, questions: state.questions, user: state.user}))(Home)
+export default withRouter(connect(state => ({users: state.users, questions: state.questions, user: state.user}))(Home))

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {handleLogin} from '../../redux/actions/shared'
 import {handleSelectedUser} from '../../redux/actions/shared'
@@ -67,4 +68,4 @@ class SignIn extends Component {
     }
 }
 
-export default connect(state => ({users: state.users}))(SignIn)
+export default withRouter(connect(state => ({users: state.users}))(SignIn))

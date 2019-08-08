@@ -1,5 +1,5 @@
 import {_saveQuestion, _getQuestions, _getUsers, _saveQuestionAnswer} from '../../_DATA'
-import {handleLoader} from './shared'
+import {handleLoader, handleSelectedUser} from './shared'
 import {handleGetUsers} from '../actions/users'
 
 
@@ -16,7 +16,8 @@ function addQuestion(questions){
 export function addQuestionHandle (data) {
     return (dispatch) => {
         dispatch(handleLoader(true))
-        return  Promise.all([
+        console.log(data)
+        return Promise.all([
             _saveQuestion(data)
         ]).then(() => {
             Promise.all([
@@ -43,14 +44,14 @@ export function handleSaveQuestionAnswer (data) {
         dispatch(handleLoader(true))
         return  Promise.all([
             _saveQuestionAnswer(data)
-        ]).then((response) => {
-            console.log(response)
+        ]).then(() => {
             Promise.all([
                 _getQuestions(),
                 _getUsers()
             ]).then(([questions, users]) => {
                 dispatch(saveQuestionAnswer(questions))
                 dispatch(handleGetUsers(users))
+                dispatch(handleSelectedUser(data.authedUser))
                 dispatch(handleLoader(false))
             })
         })

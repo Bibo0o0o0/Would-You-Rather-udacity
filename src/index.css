@@ -331,3 +331,61 @@ nav ul a:hover {
 }
 
 /* Loader */
+.SubContainer-data .first-div,
+.SubContainer-data .second-div{
+    position: relative;
+    min-height: 100px;
+    border: 1px solid #dbdbdb;
+    padding: 5px;
+    border-radius: 10px;;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.your-vote{
+    border: 1px solid #239e61 !important;
+    background: #239e6114;
+}
+.label-Your-vote
+{
+    position: absolute;
+    border: 1px solid #ffc800;
+    border-radius: 100px;
+    width: 40px;
+    right: -15px;
+    top: -15px;
+    background: #ffc800;
+    color: #fff;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+}
+.SubContainer-data .first-div p,
+.SubContainer-data .second-div p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.SubContainer-data .second-div{
+margin-top: 10px;
+}
+
+.progress {
+    position: relative;
+    /* height: 10px; */
+    display: inline-block;
+    width: 100%;
+    background-color: #acece6;
+    border-radius: 100px;
+    margin: .5rem 0 1rem 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    font-weight: bold;
+    padding: 7px;
+}
