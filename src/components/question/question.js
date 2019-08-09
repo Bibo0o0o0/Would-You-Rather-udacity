@@ -1,9 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {handleSaveQuestionAnswer} from '../../redux/actions/questions'
+import NoMatch from '../NoMatch/NoMatch'
 
 const Question = (props) => {
     const question = props.match.params.questionID
+    if(!props.questions.hasOwnProperty(question)){
+        return <NoMatch />
+    }
     const authorObject = props.users[props.questions[question].author]
     let choiseOne = null
     let choiseTwo = null

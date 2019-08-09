@@ -1,25 +1,25 @@
 import React from 'react'
 import {Route, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-function PrivateRoute ({component: Component, ...rest}){
-    console.log(rest)
-    return (
-        <Route
-          {...rest}
-          render={props =>
-            rest.login ? (
-              <Component {...props} />
-            ) : (
-              <Redirect
-                to={{
-                  pathname: "/signin",
-                  state: { from: rest.path }
-                }}
-              />
-            )
-          }
-        />
-      )
+function PrivateRoute(mainProps) {
+    const Component = mainProps.component
+    if (!mainProps.login) {
+        return <Redirect
+            from={mainProps.location.pathname}
+            to={{
+            pathname: "/signin",
+            state: {
+                from: {
+                    pathname: mainProps.location.pathname
+                }
+            }
+        }}/>
+    } else {
+        return (
+            <Route exact path={mainProps.path} render={props => <Component {...props}/>}/>
+        )
+    }
 }
 
-export default PrivateRoute
+export default connect(state => ({login: state.login}))(PrivateRoute)

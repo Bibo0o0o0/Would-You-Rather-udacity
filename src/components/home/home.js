@@ -25,8 +25,8 @@ class Home extends Component {
             }
         })
 
-        answeredQuestions.sort((a,b) => {
-            return a.timestamp - b.timestamp
+        answeredQuestions.sort((a, b) => {
+            return b.timestamp - a.timestamp
         })
 
         const UnanwseredQuestionsObj = {
@@ -37,14 +37,11 @@ class Home extends Component {
             delete UnanwseredQuestionsObj[key]
         })
 
-        const UnanwseredQuestionsArray = []
-        for (let UnanwseredQuestion in UnanwseredQuestionsObj){
-            UnanwseredQuestionsArray.push(UnanwseredQuestionsObj[UnanwseredQuestion])
-        }
-        UnanwseredQuestionsArray.sort((a,b) => {
-            return a.timestamp - b.timestamp
+        const UnanwseredQuestionsArray = Object.values(UnanwseredQuestionsObj)
+        UnanwseredQuestionsArray.sort((a, b) => {
+            return b.timestamp - a.timestamp
         })
-        
+
         return (
             <div className="container">
                 <div className="row">
@@ -73,12 +70,11 @@ class Home extends Component {
                         <div id="test1" className="col s12">
 
                             <div className="container-all">
-                                {UnanwseredQuestionsArray
-                                    .map(UnanwseredQuestion => <QuestionCard
-                                        key={UnanwseredQuestion.id}
-                                        answered={false}
-                                        question={UnanwseredQuestion}
-                                        autherAvatar={this.props.users[UnanwseredQuestion.author].avatarURL}/>)}
+                                {UnanwseredQuestionsArray.map(UnanwseredQuestion => <QuestionCard
+                                    key={UnanwseredQuestion.id}
+                                    answered={false}
+                                    question={UnanwseredQuestion}
+                                    autherAvatar={this.props.users[UnanwseredQuestion.author].avatarURL}/>)}
                             </div>
 
                         </div>
