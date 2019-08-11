@@ -19,11 +19,11 @@ const Question = (props) => {
         } else if (choiseTwo.checked) {
             choise = 'optionTwo'
         } else {
-            alert('Please, Select an choise')
+            alert('Please, Select a choise')
             return
         }
 
-        props.dispatch(handleSaveQuestionAnswer({authedUser: props.user.id, qid: question, answer: choise}))
+        props.handleSaveQuestionAnswer({authedUser: props.user.id, qid: question, answer: choise})
     }
 
     if (props.user.answers.hasOwnProperty(question)) {
@@ -143,4 +143,12 @@ const Question = (props) => {
     )
 }
 
-export default connect(state => ({questions: state.questions, user: state.user, users: state.users}))(Question)
+const mapDispatchToProps = dispatch => {
+    return {
+        handleSaveQuestionAnswer: (data) => {
+        dispatch(handleSaveQuestionAnswer(data))
+      }
+    };
+  };
+
+export default connect(state => ({questions: state.questions, user: state.user, users: state.users}), mapDispatchToProps)(Question)
